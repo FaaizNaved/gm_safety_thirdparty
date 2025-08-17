@@ -1,0 +1,6 @@
+@gm_safety_thirdparty_HostAddress = http://localhost:5134
+
+GET {{gm_safety_thirdparty_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
