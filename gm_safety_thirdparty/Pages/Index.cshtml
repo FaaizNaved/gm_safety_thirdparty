@@ -1,0 +1,89 @@
+﻿@page
+@model gm_safety_thirdparty.Pages.IndexModel
+@{
+    ViewData["Title"] = "Employee Index";
+}
+
+<h1>Employee List</h1>
+
+@if (Model.Employees != null && Model.Employees.Any())
+{
+    <div class="mb-3">
+        <a asp-page-handler="ExportExcel" class="btn btn-success">Export to Excel</a>
+        <a asp-page-handler="ExportPdf" class="btn btn-danger">Export to PDF</a>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Date of Joining</th>
+                    <th>Contribution Level</th>
+                    <th>Direct Manager</th>
+                    <th>Manager Email</th>
+                    <th>Manager Emp ID</th>
+                    <th>Division</th>
+                    <th>Sub Employee Type</th>
+                    <th>Employee Status</th>
+                    <th>Employee Type</th>
+                    <th>Job Level</th>
+                    <th>PS Group</th>
+                    <th>PS Level</th>
+                    <th>SBU</th>
+                    <th>Date of Birth</th>
+                    <th>Company Email</th>
+                    <th>Gender</th>
+                    <th>Office City</th>
+                    <th>Office Location</th>
+                    <th>Office Region</th>
+                    <th>Office State</th>
+                    <th>Office Mobile</th>
+                    <th>GMMCO Dept</th>
+                    <th>Safety Role</th>
+                    <th>Record Source</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var emp in Model.Employees)
+                {
+                    <tr>
+                        <td>@emp.EmployeeId</td>
+                        <td>@emp.FirstName</td>
+                        <td>@emp.LastName</td>
+                        <td>@emp.DateOfJoining.ToString("dd-MM-yyyy")</td>
+                        <td>@emp.ContributionLevel</td>
+                        <td>@emp.DirectManager</td>
+                        <td>@emp.DirectManagerEmail</td>
+                        <td>@emp.DirectManagerEmployeeId</td>
+                        <td>@emp.Division</td>
+                        <td>@emp.SubEmployeeType</td>
+                        <td>@emp.EmployeeStatus</td>
+                        <td>@emp.EmployeeType</td>
+                        <td>@emp.JobLevel</td>
+                        <td>@emp.PsGroup</td>
+                        <td>@emp.PsLevel</td>
+                        <td>@emp.SBU</td>
+                        <td>@emp.DateOfBirth.ToString("dd-MM-yyyy")</td>
+                        <td>@emp.CompanyEmailId</td>
+                        <td>@emp.Gender</td>
+                        <td>@emp.OfficeCity</td>
+                        <td>@emp.OfficeLocation</td>
+                        <td>@emp.OfficeRegion</td>
+                        <td>@emp.OfficeState</td>
+                        <td>@emp.OfficeMobileNo</td>
+                        <td>@emp.GmmcoDept</td>
+                        <td>@emp.SafetyRole</td>
+                        <td>@emp.RECORD_SOURCE_NAME</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div class="alert alert-info">No employees found.</div>
+}

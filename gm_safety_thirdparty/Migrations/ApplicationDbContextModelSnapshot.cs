@@ -10,7 +10,7 @@ using gm_safety_thirdparty.Data;
 
 namespace gm_safety_thirdparty.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
+    [DbContext(typeof(ThirdPartyDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

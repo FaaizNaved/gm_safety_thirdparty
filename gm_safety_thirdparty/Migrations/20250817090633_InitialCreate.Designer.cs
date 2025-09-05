@@ -11,7 +11,7 @@ using gm_safety_thirdparty.Data;
 
 namespace gm_safety_thirdparty.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
+    [DbContext(typeof(ThirdPartyDbContext))]
     [Migration("20250817090633_InitialCreate")]
     partial class InitialCreate
     {
